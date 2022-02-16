@@ -1,0 +1,108 @@
+{
+	"pages": [
+		{
+			"path": "pages/home/Home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"subNVues":[
+						{
+							"id": "CityPopup",
+							"path": "pages/home/subnvue/CityPopup",
+							"type": "popup",
+							"style": {
+								"width": "100%",
+								"height": "400upx",
+								"position": "absolute",
+								"dock":"bottom",
+								"bottom":"0",
+								"mask":"rgba(0,0,0,0.3)",
+								"background": "transparent"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"path": "pages/market/Market",
+			"style": {
+				"navigationBarTitleText": "商城",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/msg/Msg",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/mine/Mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/test/Test",
+			"style": {
+				"navigationBarTitleText": "uni-app",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "DEMO",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#333333",
+		"backgroundColor": "#ffffff",
+		"height": "50px",
+		"iconWidth": "24px",
+		"spacing": "4px",
+		"list": [{
+				"pagePath": "pages/home/Home",
+				"iconPath": "static/images/tabbar/home.png",
+				"selectedIconPath": "static/images/tabbar/home-light.png",
+				"visible": true
+			},
+			{
+				"pagePath": "pages/market/Market",
+				"iconPath": "static/images/tabbar/market.png",
+				"selectedIconPath": "static/images/tabbar/market-light.png",
+				"visible": true
+			},
+			{
+				"pagePath": "pages/msg/Msg",
+				"iconPath": "static/images/tabbar/msg.png",
+				"selectedIconPath": "static/images/tabbar/msg-light.png",
+				"visible": true
+			},
+			{
+				"pagePath": "pages/mine/Mine",
+				"iconPath": "static/images/tabbar/mine.png",
+				"selectedIconPath": "static/images/tabbar/mine-light.png",
+				"visible": true
+			}
+		]
+	}
+}
