@@ -9,6 +9,7 @@
 				<text class="list-no">第{{index}}张</text>
 			</view>
 		</view>
+		<!-- Fixed插槽 -->
 		<view slot="diyFixed" class="fixed-btn" @click="goSecondPage"></view>
 	</HomePage>
 </template>
