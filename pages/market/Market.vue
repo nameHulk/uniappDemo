@@ -1,10 +1,10 @@
 <template>
-	<HomePage :navTitle="'商城'" :showNavBar="false" :statusBackground="'#006c7f'" :contentBackground="'#006c7f'" :showSafeArea="true">
+	<mason-homepage :navTitle="'商城'" :showNavBar="false" :statusBackground="'#006c7f'" :contentBackground="'#006c7f'" :showSafeArea="true">
 		<!-- 页面内容插槽 -->
 		<view slot="diyContent">
 			<image class="user-bg" mode="aspectFill" src="../../static/images/common/test.jpeg"></image>
 		</view>
-	</HomePage>
+	</mason-homepage>
 </template>
 
 <script>

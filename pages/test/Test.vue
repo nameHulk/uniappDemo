@@ -1,5 +1,5 @@
 <template>
-	<HomePage :navTitle="'二级页面'" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @leftClick="leftClick">
+	<mason-homepage :navTitle="'二级页面'" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @leftClick="leftClick">
 		<!-- 页面内容插槽 -->
 		<view slot="diyContent">
 			<view class="list" v-for="(item,index) in dataList" :key="index">
@@ -7,7 +7,7 @@
 				<text class="list-no">第{{index}}张</text>
 			</view>
 		</view>
-	</HomePage>
+	</mason-homepage>
 </template>
 
 <script>

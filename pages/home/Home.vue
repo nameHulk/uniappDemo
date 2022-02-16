@@ -1,5 +1,5 @@
 <template>
-	<HomePage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @rightClick="rightClick">
+	<mason-homepage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @rightClick="rightClick">
 		<!-- 导航右侧插槽 -->
 		<image slot="diyRight" class="location-icon" mode="aspectFit" src="../../static/images/common/location.png"></image>
 		<!-- 页面内容插槽 -->
@@ -11,7 +11,7 @@
 		</view>
 		<!-- Fixed插槽 -->
 		<view slot="diyFixed" class="fixed-btn" @click="goSecondPage"></view>
-	</HomePage>
+	</mason-homepage>
 </template>
 
 <script>

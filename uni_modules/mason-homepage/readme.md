@@ -1,4 +1,4 @@
-# uniapp 页面模版
+# mason-homepage uniapp-页面模版
 
 仅作为方便大家快速开发的页面通用模版，无偿使用，有问题请指出，我一样需要不断进步。
 
@@ -17,37 +17,29 @@
 
 ## 优势
 
-- 组件引入，全局使用快速开发。配置是否需要状态栏、导航栏等参数，或通过已有slot插槽，直接插入头部导航栏等区域，即可完成页面布局，直接编写内容即可。
+- uni_modules导入，全局使用快速开发。配置是否需要状态栏、导航栏等参数，或通过已有slot插槽，直接插入头部导航栏等区域，即可完成页面布局，直接编写内容即可。
 
 ## 如何使用
 
-### 1. 导入组件至components
-### 2. main.js注册全局组件
-```js
-	/* 全局组件 - 自定义页面容器 */
-	import HomePage from 'components/HomePage/HomePage.vue'
-	Vue.component('HomePage', HomePage)
-```
-### 3. 页面内直接使用模版
+### 1. uni_modules导入
+
+- 确认uni_modules目录中是否存在mason-homepage插件，并更新至最新版本
+
+### 2. 页面内直接使用模版
 ```html
 	<template>
-		<HomePage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @rightClick="rightClick">
+		<mason-homepage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @rightClick="rightClick">
 			<!-- 导航右侧插槽 -->
 			<image slot="diyRight" class="location-icon" mode="aspectFit" src="../../static/images/common/location.png"></image>
 			<!-- 页面内容插槽 -->
 			<view slot="diyContent">
-				<view class="list" v-for="(item,index) in dataList" :key="index">
-					<image class="list-img" mode="aspectFill" src="../../static/images/common/test.jpeg"></image>
-					<text class="list-no">第{{index}}张</text>
-				</view>
+				<!-- 编写你的页面内容 -->
 			</view>
 			<!-- Fixed插槽 -->
-			<view slot="diyFixed" class="fixed-btn" @click="goSecondPage"></view>
-		</HomePage>
+			<view slot="diyFixed" class="fixed-btn"></view>
+		</mason-homepage>
 	</template>
 ```
-
-
 
 ## HomePage参数说明
 
