@@ -32,20 +32,40 @@
 ### 3. 直接使用模版编写内容
 ```html
 	<template>
-		<mason-homepage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @rightClick="rightClick">
-			<!-- 导航右侧插槽 -->
-			<image slot="diyRight" class="location-icon" mode="aspectFit" src="../../static/images/common/location.png"></image>
+		<mason-homepage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true">
 			<!-- 页面内容插槽 -->
 			<view slot="diyContent">
 				<!-- 编写你的页面内容 -->
 			</view>
-			<!-- Fixed插槽 -->
-			<view slot="diyFixed" class="fixed-btn"></view>
 		</mason-homepage>
 	</template>
 ```
 
-## HomePage参数说明
+### 附. 下拉刷新使用
+
+- 组件绑定 刷新时间参数 :refreshTime="refreshTime" 刷新回调函数 @pullRefresh="pullRefresh"
+```html
+	<template>
+		<mason-homepage :navTitle="'App Template'" :refreshTime="refreshTime" @pullRefresh="pullRefresh" :showNavBack="false" :showSafeArea="true">
+			<!-- 页面内容插槽 -->
+			<view slot="diyContent">
+				<!-- 编写你的页面内容 -->
+			</view>
+		</mason-homepage>
+	</template>
+```
+
+- 刷新函数执行
+```js
+	pullRefresh(){
+		// 你的刷新过程
+		// ......
+		// 刷新结束 - 更新refreshTime 即触发下拉刷新回弹 建议参考示例工程配合uni.showLoading使用
+		this.refreshTime = Date.parse(new Date()) // refreshTime已在data声明
+	}
+```
+
+## 参数说明 - 详细请对比示例工程
 
 | 参数               | 说明                    |  类型   |
 | -------------     | ------------------------| -----  |
@@ -60,11 +80,11 @@
 | diyRight          | 是否开启自定义导航右侧按钮  |  Boolean |
 | contentBackground | 页面容器背景色            |  String |
 | showRefresh       | 是否开启下拉刷新           |  Boolean |
-| refreshTime       | 下拉刷新完成时间(提交即回弹) |  Number |
+| refreshTime       | 下拉刷新完成时间(更新此值即回弹) |  Number |
 | showUpLower       | 是否开启上滑加载           |  Boolean |
 | showSafeArea      | 是否开启底部安全区域       |  Boolean |
 
-## HomePage函数说明
+## 函数说明 - 详细请对比示例工程
 
 | 函数               | 说明                    |
 | -------------     | ------------------------|
@@ -72,4 +92,14 @@
 | @rightClick       | 导航栏右侧按钮点击事件      |
 | @pullRefresh      | 下拉刷新触发事件           |
 | @loadingMore      | 上滑加载触发事件           |
+
+## 插槽说明 - 详细请对比示例工程
+
+| 插槽               | 说明                    |
+| -------------     | ------------------------|
+| slot="diyLeft"    | 导航栏左侧插槽，需将参数中diyLeft绑定为true |
+| slot="diyCenter"  | 导航栏中间插槽，需将参数中diyCenter绑定为true |
+| slot="diyRight"   | 导航栏右侧插槽，槽默认为空直接使用 |
+| slot="diyContent" | 页面容器插槽，槽默认为空直接使用，所有页面元素写在此槽中 |
+| slot="diyFixed"   | 页面绝对布局元素插槽，槽默认为空直接使用，完整插入，需手动编写fixed属性且z-index大于9 |
 
