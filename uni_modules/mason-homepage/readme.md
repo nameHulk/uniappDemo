@@ -17,7 +17,7 @@
 
 ## 优势
 
-- uni_modules导入，全局使用快速开发。配置是否需要状态栏、导航栏等参数，或通过已有slot插槽，直接插入头部导航栏等区域，即可完成页面布局，直接编写内容即可。
+- uni_modules导入，全局使用。状态栏、导航栏、下拉刷新、上滑加载等一次配置，或通过已有slot插槽，直接插入头部导航栏等区域，即可完成页面布局，无需手动编写设计布局，快速开发。
 
 ## 如何使用
 
@@ -25,7 +25,11 @@
 
 - 确认uni_modules目录中是否存在mason-homepage插件，并更新至最新版本
 
-### 2. 页面内直接使用模版
+### 2. 页面属性配置
+
+- pages.json中注册页面时请配置app-plus下属性："bounce": "none", "titleNView": false
+
+### 3. 直接使用模版编写内容
 ```html
 	<template>
 		<mason-homepage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @rightClick="rightClick">
