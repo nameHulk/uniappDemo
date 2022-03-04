@@ -1,7 +1,7 @@
 {
   "id": "mason-homepage",
   "displayName": "mason-homepage uniapp快速开发页面布局通用模版",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "状态栏、导航栏、下拉刷新、上滑加载等一次配置，或通过已有slot插槽，直接插入头部导航栏等区域，即可完成页面布局，无需手动编写设计布局，快速开发。",
   "keywords": [
     "自定义",
@@ -12,7 +12,7 @@
 ],
   "repository": "https://github.com/nameHulk/uniappDemo",
   "engines": {
-    "HBuilderX": "^3.1.1"
+    "HBuilderX": "^3.1.2"
   },
   "dcloudext": {
     "category": [

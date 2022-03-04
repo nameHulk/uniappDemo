@@ -1,7 +1,9 @@
 <template>
 	<mason-homepage :navTitle="'App Template'" :showNavBack="false" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @rightClick="rightClick">
 		<!-- 导航右侧插槽 -->
+		<!-- #ifdef APP-PLUS -->
 		<image slot="diyRight" class="location-icon" mode="aspectFit" src="../../static/images/common/location.png"></image>
+		<!-- #endif -->
 		<!-- 页面内容插槽 -->
 		<view slot="diyContent">
 			<view class="list" v-for="(item,index) in dataList" :key="index">

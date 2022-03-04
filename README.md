@@ -28,6 +28,7 @@
 ### 2. 页面属性配置
 
 - pages.json中注册页面时请配置app-plus下属性："bounce": "none", "titleNView": false
+- 小程序请在pages.json中globalStyle增加配置："navigationStyle": "custom"
 
 ### 3. 直接使用模版编写内容
 ```html

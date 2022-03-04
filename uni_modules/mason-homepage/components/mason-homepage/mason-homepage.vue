@@ -1,7 +1,7 @@
 <template>
 	<view class="homepage" :style="'width:' + systemInfo.windowWidth + 'px;height:' + systemInfo.windowHeight + 'px;'">
 		<!-- 状态栏 -->
-		<!-- #ifdef APP-PLUS -->
+		<!-- #ifdef APP-PLUS || MP-WEIXIN -->
 		<view class="statusbar" v-if="showStatusBar" :style="'background-color:' + statusBackground + ';height:' + systemInfo.statusBarHeight + 'px;'"></view>
 		<!-- #endif -->
 		<!-- 导航栏 -->

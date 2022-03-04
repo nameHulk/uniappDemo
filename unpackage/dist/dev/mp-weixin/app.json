@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/Home",
+    "pages/market/Market",
+    "pages/msg/Msg",
+    "pages/mine/Mine",
+    "pages/test/Test"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "DEMO",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "backgroundColor": "#ffffff",
+    "height": "50px",
+    "iconWidth": "24px",
+    "spacing": "4px",
+    "list": [
+      {
+        "pagePath": "pages/home/Home",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home-light.png",
+        "visible": true
+      },
+      {
+        "pagePath": "pages/market/Market",
+        "iconPath": "static/images/tabbar/market.png",
+        "selectedIconPath": "static/images/tabbar/market-light.png",
+        "visible": true
+      },
+      {
+        "pagePath": "pages/msg/Msg",
+        "iconPath": "static/images/tabbar/msg.png",
+        "selectedIconPath": "static/images/tabbar/msg-light.png",
+        "visible": true
+      },
+      {
+        "pagePath": "pages/mine/Mine",
+        "iconPath": "static/images/tabbar/mine.png",
+        "selectedIconPath": "static/images/tabbar/mine-light.png",
+        "visible": true
+      }
+    ]
+  },
+  "usingComponents": {}
+}

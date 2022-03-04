@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商城",
+  "usingComponents": {
+    "mason-homepage": "/uni_modules/mason-homepage/components/mason-homepage/mason-homepage"
+  }
+}

@@ -1,0 +1,1 @@
+<mason-homepage vue-id="1a013cc0-1" navTitle="个人中心" showStatusBar="{{false}}" showNavBar="{{false}}" showSafeArea="{{true}}" class="data-v-d50835f4" bind:__l="__l" vue-slots="{{['diyContent']}}"><view slot="diyContent" class="data-v-d50835f4"><image class="user-bg data-v-d50835f4" mode="aspectFill" src="../../static/images/common/test.jpeg"></image></view></mason-homepage>
