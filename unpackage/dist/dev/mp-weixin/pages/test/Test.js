@@ -97,6 +97,9 @@ try {
   components = {
     masonHomepage: function() {
       return __webpack_require__.e(/*! import() | uni_modules/mason-homepage/components/mason-homepage/mason-homepage */ "uni_modules/mason-homepage/components/mason-homepage/mason-homepage").then(__webpack_require__.bind(null, /*! @/uni_modules/mason-homepage/components/mason-homepage/mason-homepage.vue */ 52))
+    },
+    uniPopup: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 61))
     }
   }
 } catch (e) {
@@ -165,6 +168,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -200,6 +208,10 @@ var _default =
     /* 导航 - 左侧按钮 */
     leftClick: function leftClick() {
       uni.navigateBack();
+    },
+    /* 弹出层 */
+    openPopup: function openPopup() {
+      this.$refs.TestPopup.open();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

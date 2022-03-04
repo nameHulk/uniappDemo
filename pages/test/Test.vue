@@ -2,11 +2,16 @@
 	<mason-homepage :navTitle="'二级页面'" :showSafeArea="true" :showRefresh="true" :refreshTime="refreshTime" @pullRefresh="pullRefresh" @loadingMore="loadingMore" @leftClick="leftClick">
 		<!-- 页面内容插槽 -->
 		<view slot="diyContent">
+			<view class="btn" @click="openPopup">底部弹出</view>
 			<view class="list" v-for="(item,index) in dataList" :key="index">
 				<image class="list-img" mode="aspectFill" src="../../static/images/common/test.jpeg"></image>
 				<text class="list-no">第{{index}}张</text>
 			</view>
 		</view>
+		<!-- 弹出层插槽 -->
+		<uni-popup slot="diyPopup" ref="TestPopup" type="bottom" :safe-area="false">
+			<view class="test-Popup">底部弹出层</view>
+		</uni-popup>
 	</mason-homepage>
 </template>
 
@@ -45,12 +50,24 @@
 			/* 导航 - 左侧按钮 */
 			leftClick(){
 				uni.navigateBack()
-			}
+			},
+			/* 弹出层 */
+			openPopup(){
+				this.$refs.TestPopup.open()
+			},
 		}
 	}
 </script>
 
 <style lang="less" scoped>
+	.btn{
+		width: 750upx;
+		height: 80upx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+	}
 	.location-icon{
 		width: 18px;
 		height: 18px;
@@ -89,5 +106,16 @@
 		right: 20upx;
 		z-index: 2;
 		box-shadow: 0px 0px 8px rgba(255,255,255,1);
+	}
+	.test-Popup{
+		width: 750upx;
+		height: 300upx;
+		background-color: #ffffff;
+		border-top-left-radius: 12px;
+		border-top-right-radius: 12px;
+		box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

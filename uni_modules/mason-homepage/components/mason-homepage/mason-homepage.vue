@@ -36,7 +36,8 @@
 		</view>
 		<!-- fixed元素插槽 -->
 		<slot name="diyFixed"></slot>
-		<!-- 弹出层等请使用子窗体 -->
+		<!-- 弹出层元素插槽 App建议使用子窗体 其它建议将此插槽配合uni-popup使用。注意原生tabbar及原生video等无法覆盖时，可写新页面，底部进入的方式模拟弹出层-->
+		<slot name="diyPopup"></slot>
 	</view>
 </template>
 

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "uni-app",
   "usingComponents": {
-    "mason-homepage": "/uni_modules/mason-homepage/components/mason-homepage/mason-homepage"
+    "mason-homepage": "/uni_modules/mason-homepage/components/mason-homepage/mason-homepage",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
   }
 }
