@@ -2,10 +2,10 @@
 	<view class="homepage" :style="'width:' + systemInfo.windowWidth + 'px;height:' + systemInfo.windowHeight + 'px;'">
 		<!-- 状态栏 -->
 		<!-- #ifdef APP-PLUS || MP-WEIXIN -->
-		<view class="statusbar" v-if="showStatusBar" :style="'background-color:' + statusBackground + ';height:' + systemInfo.statusBarHeight + 'px;'"></view>
+		<view class="statusbar" v-if="showStatusBar&&!showOpacityBar" :style="'background-color:' + statusBackground + ';height:' + systemInfo.statusBarHeight + 'px;'"></view>
 		<!-- #endif -->
 		<!-- 导航栏 -->
-		<view class="navbar" v-if="showNavBar" :style="'background-color:' + navBackground + ';height:44px;'">
+		<view class="navbar" v-if="showNavBar&&!showOpacityBar" :style="'background-color:' + navBackground + ';height:44px;'">
 		    <!-- 左侧 -->
 			<view class="nav-lt" @click="navHander('left')">
 				<slot v-if="diyLeft" name="diyLeft"></slot>
@@ -21,8 +21,27 @@
 				<slot name="diyRight"></slot>
 			</view>
 		</view>
+		<!-- 渐变导航栏 -->
+		<view class="opacitybar" v-if="showOpacityBar" :style="'background-color:' + opacityBackground + ';height:' + (systemInfo.statusBarHeight+44) + 'px;opacity:' + opacityValue">
+			<view class="opa-navbar" v-if="showNavBar">
+			    <!-- 左侧 -->
+				<view class="nav-lt" @click="navHander('left')">
+					<slot v-if="diyLeft" name="diyLeft"></slot>
+					<image v-else-if="!diyLeft && showNavBack" class="lt-icon" mode="aspectFit" src="@/static/images/common/back.png"></image>
+				</view>
+				<!-- 中间 -->
+				<view class="nav-ct">
+					<slot v-if="diyCenter" name="diyCenter"></slot>
+					<text v-else class="ct-title">{{navTitle}}</text>
+				</view>
+				<!-- 右侧 -->
+				<view class="nav-rt" @click="navHander('right')">
+					<slot name="diyRight"></slot>
+				</view>
+			</view>
+		</view>
 		<!-- 页面容器 -->
-		<view class="content" @touchstart="touchEvent($event,'start')" @touchmove="touchEvent($event,'move')" @touchend="touchEvent($event,'end')" :style="'background-color:' + contentBackground + ';height:' + (systemInfo.windowHeight-(showStatusBar?systemInfo.statusBarHeight:0)-(showNavBar?44:0)) + 'px;'">
+		<view class="content" @touchstart="touchEvent($event,'start')" @touchmove="touchEvent($event,'move')" @touchend="touchEvent($event,'end')" :style="'background-color:' + contentBackground + ';height:' + (systemInfo.windowHeight-(showStatusBar&&!showOpacityBar?systemInfo.statusBarHeight:0)-(showNavBar&&!showOpacityBar?44:0)) + 'px;'">
 			<scroll-view :scroll-y="pulldown.scrollStatus" class="content-scroll" @scrolltoupper="scrollEvent($event,'scrolltoupper')" @scrolltolower="scrollEvent($event, 'scrolltolower')" @scroll="scrollEvent($event,'scroll')">
 				<!-- 下拉刷新块 -->
 				<view class="pull" :style="'height:' + Math.ceil(pulldown.distance*0.5) + 'px'">
@@ -64,6 +83,9 @@
 			navTitle: {type:String, default:'App Template'},
 			/* 导航栏 - 是否自定义右侧 */
 			diyRight: {type:Boolean, default:false},
+			/* ***************** 透明渐变状态+导航 - 配置 ***************** */
+			showOpacityBar: {type:Boolean, default:false},
+			opacityBackground: {type:String, default:'#ffffff'},
 			/* ***************** 页面容器 - 配置 ***************** */
 			/* 页面容器 - 背景色 */
 			contentBackground: {type:String, default:'#f8f8f8'},
@@ -78,6 +100,8 @@
 		},
 		data() {
 			return {
+				/* 透明渐变状态+导航 - 透明度 */
+				opacityValue: 0,
 				/* 页面容器 - 下拉刷新 */
 				pulldown: {
 					// 是否开启滚动
@@ -175,6 +199,10 @@
 				switch (ty){
 					case 'scrolltoupper':
 						this.pulldown.flag = 1
+						// 透明渐变状态+导航
+						if(this.showOpacityBar){
+							this.opacityValue = 0
+						}
 					break;
 					case 'scrolltolower':
 						this.$emit('loadingMore');
@@ -182,6 +210,25 @@
 					case 'scroll':
 						if(e.detail.scrollTop > 0){
 							this.pulldown.flag = 0
+						}
+						// 透明渐变状态+导航
+						if(this.showOpacityBar){
+							let opa = (e.detail.scrollTop)/((this.systemInfo.statusBarHeight+44)*2)
+							this.opacityValue = opa
+							// #ifdef MP-WEIXIN
+							if(e.detail.scrollTop >= 80){
+								console.log('123')
+								uni.setNavigationBarColor({
+								    frontColor: '#000000',
+								    backgroundColor: 'transparent',
+								})
+							}else{
+								uni.setNavigationBarColor({
+								    frontColor: '#ffffff',
+								    backgroundColor: 'transparent',
+								})
+							}
+							// #endif
 						}
 					break;
 					default:
@@ -267,6 +314,76 @@
 				justify-content: flex-start;
 				position: absolute;
 				right: 0;
+			}
+		}
+		.opacitybar{
+			width: 100%;
+			position: fixed;
+			top: 0;
+			z-index: 2;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			.opa-navbar{
+				width: 100%;
+				height: 44px;
+				position: relative;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				&::before{
+					position: absolute;
+					content: '';
+					bottom: 0px;
+					background: rgba(0,0,0,0.3);
+					width: 100%;
+					height: 1px;
+					transform: scaleY(0.5);
+					transform-origin: 0 0;
+					-webkit-transform: scaleY(0.5);
+					-webkit-transform-origin: 0 0;
+				}
+				.nav-lt{
+					height: 80%;
+					padding: 0px 10px 0px 10px;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-start;
+					position: absolute;
+					left: 0;
+					.lt-icon{
+						width: 16px;
+						height: 16px;
+					}
+				}
+				.nav-ct{
+					width: 60%;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					.ct-title{
+						font-size: 15px;
+						color: #000000;
+						white-space: nowrap;
+						word-break: break-all;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
+				.nav-rt{
+					height: 80%;
+					padding: 0px 10px 0px 10px;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-start;
+					position: absolute;
+					right: 0;
+				}
 			}
 		}
 		.content{

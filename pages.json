@@ -50,6 +50,8 @@
 			"path": "pages/mine/Mine",
 			"style": {
 				"navigationBarTitleText": "我的",
+				"navigationBarTextStyle": "white",
+				"navigationStyle": "custom",
 				"app-plus": {
 					"bounce": "none",
 					"titleNView": false

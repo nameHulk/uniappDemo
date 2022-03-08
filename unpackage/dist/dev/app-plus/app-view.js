@@ -488,12 +488,92 @@ var render = function() {
             1
           )
         : _vm._e(),
+      _vm._$g(11, "i")
+        ? _c(
+            "v-uni-view",
+            {
+              staticClass: _vm._$g(11, "sc"),
+              style: _vm._$g(11, "s"),
+              attrs: { _i: 11 }
+            },
+            [
+              _vm._$g(12, "i")
+                ? _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+                    [
+                      _c(
+                        "v-uni-view",
+                        {
+                          staticClass: _vm._$g(13, "sc"),
+                          attrs: { _i: 13 },
+                          on: {
+                            click: function($event) {
+                              return _vm.$handleViewEvent($event)
+                            }
+                          }
+                        },
+                        [
+                          _vm._$g(14, "i")
+                            ? _vm._t("diyLeft", null, { _i: 14 })
+                            : _vm._$g(15, "e")
+                            ? _c("v-uni-image", {
+                                staticClass: _vm._$g(15, "sc"),
+                                attrs: {
+                                  mode: "aspectFit",
+                                  src: "/static/images/common/back.png",
+                                  _i: 15
+                                }
+                              })
+                            : _vm._e()
+                        ],
+                        2
+                      ),
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                        [
+                          _vm._$g(17, "i")
+                            ? _vm._t("diyCenter", null, { _i: 17 })
+                            : _c(
+                                "v-uni-text",
+                                {
+                                  staticClass: _vm._$g(18, "sc"),
+                                  attrs: { _i: 18 }
+                                },
+                                [_vm._v(_vm._$g(18, "t0-0"))]
+                              )
+                        ],
+                        2
+                      ),
+                      _c(
+                        "v-uni-view",
+                        {
+                          staticClass: _vm._$g(19, "sc"),
+                          attrs: { _i: 19 },
+                          on: {
+                            click: function($event) {
+                              return _vm.$handleViewEvent($event)
+                            }
+                          }
+                        },
+                        [_vm._t("diyRight", null, { _i: 20 })],
+                        2
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e()
+            ],
+            1
+          )
+        : _vm._e(),
       _c(
         "v-uni-view",
         {
-          staticClass: _vm._$g(11, "sc"),
-          style: _vm._$g(11, "s"),
-          attrs: { _i: 11 },
+          staticClass: _vm._$g(21, "sc"),
+          style: _vm._$g(21, "s"),
+          attrs: { _i: 21 },
           on: {
             touchstart: function($event) {
               return _vm.$handleViewEvent($event)
@@ -510,8 +590,8 @@ var render = function() {
           _c(
             "v-uni-scroll-view",
             {
-              staticClass: _vm._$g(12, "sc"),
-              attrs: { "scroll-y": _vm._$g(12, "a-scroll-y"), _i: 12 },
+              staticClass: _vm._$g(22, "sc"),
+              attrs: { "scroll-y": _vm._$g(22, "a-scroll-y"), _i: 22 },
               on: {
                 scrolltoupper: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -528,25 +608,25 @@ var render = function() {
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(13, "sc"),
-                  style: _vm._$g(13, "s"),
-                  attrs: { _i: 13 }
+                  staticClass: _vm._$g(23, "sc"),
+                  style: _vm._$g(23, "s"),
+                  attrs: { _i: 23 }
                 },
                 [
                   _c(
                     "v-uni-text",
-                    { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
-                    [_vm._v(_vm._$g(14, "t0-0"))]
+                    { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
+                    [_vm._v(_vm._$g(24, "t0-0"))]
                   )
                 ],
                 1
               ),
-              _vm._t("diyContent", null, { _i: 15 }),
-              _vm._$g(16, "i")
+              _vm._t("diyContent", null, { _i: 25 }),
+              _vm._$g(26, "i")
                 ? _c("v-uni-view", {
-                    staticClass: _vm._$g(16, "sc"),
-                    style: _vm._$g(16, "s"),
-                    attrs: { _i: 16 }
+                    staticClass: _vm._$g(26, "sc"),
+                    style: _vm._$g(26, "s"),
+                    attrs: { _i: 26 }
                   })
                 : _vm._e()
             ],
@@ -555,8 +635,8 @@ var render = function() {
         ],
         1
       ),
-      _vm._t("diyFixed", null, { _i: 17 }),
-      _vm._t("diyPopup", null, { _i: 18 })
+      _vm._t("diyFixed", null, { _i: 27 }),
+      _vm._t("diyPopup", null, { _i: 28 })
     ],
     2
   )
@@ -594,7 +674,7 @@ __webpack_require__.r(__webpack_exports__);
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 
 {
-  props: ["showStatusBar", "statusBackground", "showNavBar", "navBackground", "showNavBack", "diyLeft", "diyCenter", "navTitle", "diyRight", "contentBackground", "showRefresh", "refreshTime", "showUpLower", "showSafeArea"],
+  props: ["showStatusBar", "statusBackground", "showNavBar", "navBackground", "showNavBack", "diyLeft", "diyCenter", "navTitle", "diyRight", "showOpacityBar", "opacityBackground", "contentBackground", "showRefresh", "refreshTime", "showUpLower", "showSafeArea"],
   data: function data() {
     return {
       wxsProps: {} };
@@ -1113,7 +1193,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".homepage[data-v-135e6713] {\n  position: relative;\n}\n.homepage .statusbar[data-v-135e6713] {\n  width: 100%;\n}\n.homepage .navbar[data-v-135e6713] {\n  width: 100%;\n  position: relative;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .navbar[data-v-135e6713]::before {\n  position: absolute;\n  content: '';\n  bottom: 0px;\n  background: rgba(0, 0, 0, 0.3);\n  width: 100%;\n  height: 1px;\n  transform: scaleY(0.5);\n  transform-origin: 0 0;\n  -webkit-transform: scaleY(0.5);\n  -webkit-transform-origin: 0 0;\n}\n.homepage .navbar .nav-lt[data-v-135e6713] {\n  height: 80%;\n  padding: 0px 10px 0px 10px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: flex-start;\n  position: absolute;\n  left: 0;\n}\n.homepage .navbar .nav-lt .lt-icon[data-v-135e6713] {\n  width: 16px;\n  height: 16px;\n}\n.homepage .navbar .nav-ct[data-v-135e6713] {\n  width: 60%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .navbar .nav-ct .ct-title[data-v-135e6713] {\n  font-size: 15px;\n  color: #000000;\n  white-space: nowrap;\n  word-break: break-all;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.homepage .navbar .nav-rt[data-v-135e6713] {\n  height: 80%;\n  padding: 0px 10px 0px 10px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: flex-start;\n  position: absolute;\n  right: 0;\n}\n.homepage .content[data-v-135e6713] {\n  width: 100%;\n}\n.homepage .content .content-scroll[data-v-135e6713] {\n  width: 100%;\n  height: 100%;\n}\n.homepage .content .content-scroll .pull[data-v-135e6713] {\n  width: 100%;\n  height: 200px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n.homepage .content .content-scroll .pull .pull-msg[data-v-135e6713] {\n  font-size: 14px;\n  font-family: PingFangSC-Regular, PingFang SC;\n  font-weight: 400;\n  overflow: hidden;\n  color: #666666;\n}\n.homepage .content .content-scroll .up[data-v-135e6713] {\n  width: 100%;\n  height: 44px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .content .content-scroll .up .up-msg[data-v-135e6713] {\n  font-size: 14px;\n  font-family: PingFangSC-Regular, PingFang SC;\n  font-weight: 400;\n  overflow: hidden;\n  color: #666666;\n}\n.homepage .content .content-scroll .safearea[data-v-135e6713] {\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, ".homepage[data-v-135e6713] {\n  position: relative;\n}\n.homepage .statusbar[data-v-135e6713] {\n  width: 100%;\n}\n.homepage .navbar[data-v-135e6713] {\n  width: 100%;\n  position: relative;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .navbar[data-v-135e6713]::before {\n  position: absolute;\n  content: '';\n  bottom: 0px;\n  background: rgba(0, 0, 0, 0.3);\n  width: 100%;\n  height: 1px;\n  transform: scaleY(0.5);\n  transform-origin: 0 0;\n  -webkit-transform: scaleY(0.5);\n  -webkit-transform-origin: 0 0;\n}\n.homepage .navbar .nav-lt[data-v-135e6713] {\n  height: 80%;\n  padding: 0px 10px 0px 10px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: flex-start;\n  position: absolute;\n  left: 0;\n}\n.homepage .navbar .nav-lt .lt-icon[data-v-135e6713] {\n  width: 16px;\n  height: 16px;\n}\n.homepage .navbar .nav-ct[data-v-135e6713] {\n  width: 60%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .navbar .nav-ct .ct-title[data-v-135e6713] {\n  font-size: 15px;\n  color: #000000;\n  white-space: nowrap;\n  word-break: break-all;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.homepage .navbar .nav-rt[data-v-135e6713] {\n  height: 80%;\n  padding: 0px 10px 0px 10px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: flex-start;\n  position: absolute;\n  right: 0;\n}\n.homepage .opacitybar[data-v-135e6713] {\n  width: 100%;\n  position: fixed;\n  top: 0;\n  z-index: 2;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-end;\n}\n.homepage .opacitybar .opa-navbar[data-v-135e6713] {\n  width: 100%;\n  height: 44px;\n  position: relative;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .opacitybar .opa-navbar[data-v-135e6713]::before {\n  position: absolute;\n  content: '';\n  bottom: 0px;\n  background: rgba(0, 0, 0, 0.3);\n  width: 100%;\n  height: 1px;\n  transform: scaleY(0.5);\n  transform-origin: 0 0;\n  -webkit-transform: scaleY(0.5);\n  -webkit-transform-origin: 0 0;\n}\n.homepage .opacitybar .opa-navbar .nav-lt[data-v-135e6713] {\n  height: 80%;\n  padding: 0px 10px 0px 10px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: flex-start;\n  position: absolute;\n  left: 0;\n}\n.homepage .opacitybar .opa-navbar .nav-lt .lt-icon[data-v-135e6713] {\n  width: 16px;\n  height: 16px;\n}\n.homepage .opacitybar .opa-navbar .nav-ct[data-v-135e6713] {\n  width: 60%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .opacitybar .opa-navbar .nav-ct .ct-title[data-v-135e6713] {\n  font-size: 15px;\n  color: #000000;\n  white-space: nowrap;\n  word-break: break-all;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.homepage .opacitybar .opa-navbar .nav-rt[data-v-135e6713] {\n  height: 80%;\n  padding: 0px 10px 0px 10px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: flex-start;\n  position: absolute;\n  right: 0;\n}\n.homepage .content[data-v-135e6713] {\n  width: 100%;\n}\n.homepage .content .content-scroll[data-v-135e6713] {\n  width: 100%;\n  height: 100%;\n}\n.homepage .content .content-scroll .pull[data-v-135e6713] {\n  width: 100%;\n  height: 200px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n.homepage .content .content-scroll .pull .pull-msg[data-v-135e6713] {\n  font-size: 14px;\n  font-family: PingFangSC-Regular, PingFang SC;\n  font-weight: 400;\n  overflow: hidden;\n  color: #666666;\n}\n.homepage .content .content-scroll .up[data-v-135e6713] {\n  width: 100%;\n  height: 44px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.homepage .content .content-scroll .up .up-msg[data-v-135e6713] {\n  font-size: 14px;\n  font-family: PingFangSC-Regular, PingFang SC;\n  font-weight: 400;\n  overflow: hidden;\n  color: #666666;\n}\n.homepage .content .content-scroll .safearea[data-v-135e6713] {\n  width: 100%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -1905,6 +1985,26 @@ var render = function() {
           _c("v-uni-image", {
             staticClass: _vm._$g(2, "sc"),
             attrs: { mode: "aspectFill", src: _vm._$g(2, "a-src"), _i: 2 }
+          }),
+          _c("v-uni-image", {
+            staticClass: _vm._$g(3, "sc"),
+            attrs: { mode: "aspectFill", src: _vm._$g(3, "a-src"), _i: 3 }
+          }),
+          _c("v-uni-image", {
+            staticClass: _vm._$g(4, "sc"),
+            attrs: { mode: "aspectFill", src: _vm._$g(4, "a-src"), _i: 4 }
+          }),
+          _c("v-uni-image", {
+            staticClass: _vm._$g(5, "sc"),
+            attrs: { mode: "aspectFill", src: _vm._$g(5, "a-src"), _i: 5 }
+          }),
+          _c("v-uni-image", {
+            staticClass: _vm._$g(6, "sc"),
+            attrs: { mode: "aspectFill", src: _vm._$g(6, "a-src"), _i: 6 }
+          }),
+          _c("v-uni-image", {
+            staticClass: _vm._$g(7, "sc"),
+            attrs: { mode: "aspectFill", src: _vm._$g(7, "a-src"), _i: 7 }
           })
         ],
         1

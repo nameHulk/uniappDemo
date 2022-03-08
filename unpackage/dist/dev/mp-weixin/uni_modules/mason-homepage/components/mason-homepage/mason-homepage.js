@@ -168,6 +168,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   props: {
@@ -191,6 +210,9 @@ var _default =
     navTitle: { type: String, default: 'App Template' },
     /* 导航栏 - 是否自定义右侧 */
     diyRight: { type: Boolean, default: false },
+    /* ***************** 透明渐变状态+导航 - 配置 ***************** */
+    showOpacityBar: { type: Boolean, default: false },
+    opacityBackground: { type: String, default: '#ffffff' },
     /* ***************** 页面容器 - 配置 ***************** */
     /* 页面容器 - 背景色 */
     contentBackground: { type: String, default: '#f8f8f8' },
@@ -205,6 +227,8 @@ var _default =
 
   data: function data() {
     return {
+      /* 透明渐变状态+导航 - 透明度 */
+      opacityValue: 0,
       /* 页面容器 - 下拉刷新 */
       pulldown: {
         // 是否开启滚动
@@ -302,6 +326,10 @@ var _default =
       switch (ty) {
         case 'scrolltoupper':
           this.pulldown.flag = 1;
+          // 透明渐变状态+导航
+          if (this.showOpacityBar) {
+            this.opacityValue = 0;
+          }
           break;
         case 'scrolltolower':
           this.$emit('loadingMore');
@@ -309,6 +337,25 @@ var _default =
         case 'scroll':
           if (e.detail.scrollTop > 0) {
             this.pulldown.flag = 0;
+          }
+          // 透明渐变状态+导航
+          if (this.showOpacityBar) {
+            var opa = e.detail.scrollTop / ((this.systemInfo.statusBarHeight + 44) * 2);
+            this.opacityValue = opa;
+
+            if (e.detail.scrollTop >= 80) {
+              console.log('123');
+              uni.setNavigationBarColor({
+                frontColor: '#000000',
+                backgroundColor: 'transparent' });
+
+            } else {
+              uni.setNavigationBarColor({
+                frontColor: '#ffffff',
+                backgroundColor: 'transparent' });
+
+            }
+
           }
           break;
         default:

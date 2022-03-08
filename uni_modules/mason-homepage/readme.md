@@ -17,6 +17,7 @@
 
 ## 优势
 
+- App端、微信小程序、H5全兼容。
 - uni_modules导入，全局使用。状态栏、导航栏、下拉刷新、上滑加载等一次配置，或通过已有slot插槽，直接插入头部导航栏等区域，即可完成页面布局，无需手动编写设计布局，快速开发。
 
 ## 如何使用
@@ -79,6 +80,8 @@
 | diyCenter         | 是否开启自定义导航中间内容  |  Boolean |
 | navTitle          | 导航栏页面标题            |  String |
 | diyRight          | 是否开启自定义导航右侧按钮  |  Boolean |
+| showOpacityBar    | 是否开启渐变顶部状态+导航栏 |  Boolean |
+| opacityBackground | 渐变顶部状态+导航栏背景色   |  String |
 | contentBackground | 页面容器背景色            |  String |
 | showRefresh       | 是否开启下拉刷新           |  Boolean |
 | refreshTime       | 下拉刷新完成时间(更新此值即回弹) |  Number |

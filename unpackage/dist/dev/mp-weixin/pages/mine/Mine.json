@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "我的",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
   "usingComponents": {
     "mason-homepage": "/uni_modules/mason-homepage/components/mason-homepage/mason-homepage"
   }

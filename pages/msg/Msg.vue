@@ -1,5 +1,5 @@
 <template>
-	<mason-homepage :navTitle="' '" :showNavBack="false" :diyLeft="true" :showSafeArea="true">
+	<mason-homepage :navTitle="' '" :showNavBack="false" :diyLeft="true">
 		<!-- 导航左侧插槽 -->
 		<text slot="diyLeft" class="left-text">消息中心</text>
 		<!-- 导航右侧插槽 -->
