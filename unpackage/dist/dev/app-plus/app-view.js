@@ -448,7 +448,7 @@ var render = function() {
                         staticClass: _vm._$g(5, "sc"),
                         attrs: {
                           mode: "aspectFit",
-                          src: "/static/images/common/back.png",
+                          src: _vm._$g(5, "a-src"),
                           _i: 5
                         }
                       })
@@ -521,7 +521,7 @@ var render = function() {
                                 staticClass: _vm._$g(15, "sc"),
                                 attrs: {
                                   mode: "aspectFit",
-                                  src: "/static/images/common/back.png",
+                                  src: _vm._$g(15, "a-src"),
                                   _i: 15
                                 }
                               })

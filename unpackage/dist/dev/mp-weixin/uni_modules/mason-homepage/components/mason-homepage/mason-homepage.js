@@ -344,7 +344,6 @@ var _default =
             this.opacityValue = opa;
 
             if (e.detail.scrollTop >= 80) {
-              console.log('123');
               uni.setNavigationBarColor({
                 frontColor: '#000000',
                 backgroundColor: 'transparent' });

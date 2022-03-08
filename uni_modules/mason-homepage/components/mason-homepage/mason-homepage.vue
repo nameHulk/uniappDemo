@@ -9,7 +9,7 @@
 		    <!-- 左侧 -->
 			<view class="nav-lt" @click="navHander('left')">
 				<slot v-if="diyLeft" name="diyLeft"></slot>
-				<image v-else-if="!diyLeft && showNavBack" class="lt-icon" mode="aspectFit" src="@/static/images/common/back.png"></image>
+				<image v-else-if="!diyLeft && showNavBack" class="lt-icon" mode="aspectFit" src="../../static/images/common/back.png"></image>
 			</view>
 			<!-- 中间 -->
 			<view class="nav-ct">
@@ -27,7 +27,7 @@
 			    <!-- 左侧 -->
 				<view class="nav-lt" @click="navHander('left')">
 					<slot v-if="diyLeft" name="diyLeft"></slot>
-					<image v-else-if="!diyLeft && showNavBack" class="lt-icon" mode="aspectFit" src="@/static/images/common/back.png"></image>
+					<image v-else-if="!diyLeft && showNavBack" class="lt-icon" mode="aspectFit" src="../../static/images/common/back.png"></image>
 				</view>
 				<!-- 中间 -->
 				<view class="nav-ct">
